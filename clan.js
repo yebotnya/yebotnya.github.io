@@ -1,5 +1,5 @@
 /* Yebotnya clan script */
-var clan = ["2109", "DianaMyr2001", "Tenzue,
+var clan = ["2109", "DianaMyr2001", "Tenzue",
 "juisy", "yebotnyar1", "PikabuWarrior", "Wheetlan",
 "Thanksdude", "EdwardSurovij", "GodSavePutin", "Croaton",
 "vitjuxa", "Grifon903", "truffleston", "Arkenion",
