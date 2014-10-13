@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>yEBOTNYA Clan</title>
+		<meta charset="UTF-8"/>
+		<script src="clan.js"></script>
+		<style>
+			body {
+				background:black;
+				color:white;
+				text-align:center;
+				cursor:crosshair;
+				font-family: Arial, Verdana, Comic Sans MS, Webdings;
+			}
+			#main {
+				display:inline-block;
+			}
+			#logo {
+				height:90vh;
+				border-radius:2000px;
+				opacity:0.5;
+			}
+			#name {
+				position:absolute;
+				top:0;
+				font-size:30pt;
+				text-shadow:0 0 20px #0f0, 0 0 10px #0f0, 0 0 5px green, 0 2px rgb(0,100,0);
+			}
+			a {
+				color:#0f0;
+				cursor:pointer;
+			}
+			a:hover {
+				text-decoration: none;
+			}
+
+			#tabtitle {
+				position:absolute;
+				top:70pt;
+			}
+			#tabtitle a {
+				transition: 1s;
+				padding:5px 15px;
+				background: rgba(0, 255, 0, 0.5);
+				text-decoration: none;
+				border-radius:20px;
+				box-shadow: inset 0 3px 3px rgba(0,0,0,0.1), 0 1px rgba(255,255,255,0.3);
+			}
+			#tabtitle a:hover, #tabtitle a.active {
+				background: rgba(255, 0, 0, 0.5);
+			}
+			#tabcontent {
+				position:absolute;
+				top:100pt;
+				text-align: left;
+			}
+
+			#clan a {
+				display:block;
+				color:white;
+				padding:5px;
+				cursor: text;
+				text-decoration: none;
+			}
+
+			*::selection {
+				background:transparent;
+				color:transparent;
+				text-shadow:0 0 100px #0f0, 0 0 100px #0f0, 0 0 100px #0f0, 0 0 50px #0f0, 0 0 25px #0f0, 0 0 12.5px #0f0, 0 20px 50px red, 0 -20px 50px red, 0 0 1px red;
+			}
+			textarea::selection {
+				background:black;
+				color:#0f0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<img src="mar.jpg" id="logo"/>
+			<h1 id="name">YEBOTNYA Clan</h1>
+			<div id="tabtitle">
+				<a href="#" class="active" onclick="show('clan')" id="clan_title">Клан</a>
+				<a href="#" onclick="show('calling')" id="calling_title">Призыв</a>
+				<a href="#" onclick="show('script')" id="script_title">Скрипт</a>
+			</div>
+			<div id="tabcontent">
+				<div id="clan">
+					<script>
+						for(var i = 0, l = clan.length; i < l; i++)
+							document.write("<a href='http://pikabu.ru/profile/" + clan[i] + "' target='_ebtn" + Math.round(i % 5) + "'>@ " + clan[i] + "</a>")
+					</script>
+				</div>
+				<div id="calling" style="display:none;">
+					<script>
+						document.write('<textarea onclick="this.select()" cols="80" rows="10">')
+						for(var i = 0, l = clan.length; i < l; i++)
+							document.write("@" + clan[i] + ", ")
+						document.write('</textarea>');
+					</script>
+				</div>
+				<div id="script" style="display:none;">
+					Рекомендую добавить в закладки :)<br/><br/>
+					<textarea onclick="this.select()" cols="80" rows="10">javascript:c=document.createElement('script');c.src='url';document.body.appendChild(c);</textarea>
+				</div>
+			</div>
+		</div>
+		<script>
+			function show(id){
+				document.getElementById('clan').style.display = 'none';
+				document.getElementById('calling').style.display = 'none';
+				document.getElementById('script').style.display = 'none';
+				document.getElementById(id).style.display = 'block';
+
+				document.getElementById('clan_title').className = '';
+				document.getElementById('calling_title').className = '';
+				document.getElementById('script_title').className = '';
+				document.getElementById(id + '_title').className = 'active';
+			}
+		</script>
+	</body>
+</html>
